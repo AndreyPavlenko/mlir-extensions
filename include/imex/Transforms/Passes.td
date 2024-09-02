@@ -41,7 +41,9 @@ def InsertGPUAllocs : Pass<"insert-gpu-allocs", "::mlir::func::FuncOp"> {
     Option<"clientAPI", "client-api", "std::string", /*default=*/"\"opencl\"",
            "The client API to use for inserting gpu allocs">,
     Option<"inRegions", "in-regions", "bool", "false",
-           "Add gpu allocs only for memref.AllocOps within GPU regions">
+           "Add gpu allocs only for memref.AllocOps within GPU regions">,
+    Option<"gpuAddrSpace", "gpu-addr-space", "bool", "false",
+           "Add the #gpu.address_space attribute to the allocated memrefs">
   ];
 }
 
